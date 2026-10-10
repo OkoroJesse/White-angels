@@ -11,11 +11,11 @@ export default function ExperiencePage() {
   const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
 
   return (
-    <main className="min-h-screen bg-hotel-bg text-white pt-20">
+    <main className="min-h-screen bg-hotel-bg text-hotel-text pt-20 transition-colors duration-300">
       <Navbar onOpenBooking={() => setIsBookingModalOpen(true)} />
-      <div className="py-12 bg-hotel-surface border-b border-white/10 text-center">
-        <h1 className="font-serif-heading text-4xl sm:text-5xl font-bold text-white">Experience & Amenities</h1>
-        <p className="text-sm text-gray-300 mt-2 max-w-xl mx-auto px-4">
+      <div className="py-16 bg-hotel-surface border-b border-hotel-border text-center">
+        <h1 className="font-serif-heading text-4xl sm:text-6xl font-normal text-hotel-text">Experience & Amenities</h1>
+        <p className="text-base text-hotel-muted mt-3 max-w-xl mx-auto px-4 font-light">
           Discover our 24/7 power, high-speed Starlink Wi-Fi, executive bar, and secure atmosphere in Kubwa, Abuja.
         </p>
       </div>

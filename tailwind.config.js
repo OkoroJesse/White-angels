@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: 'class',
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -9,19 +10,23 @@ module.exports = {
     extend: {
       colors: {
         hotel: {
-          bg: '#0B0B0A',
-          surface: '#11110F',
-          card: '#161614',
-          border: 'rgba(247, 244, 238, 0.08)',
-          'border-gold': 'rgba(212, 175, 55, 0.25)',
+          bg: 'var(--hotel-bg)',
+          surface: 'var(--hotel-surface)',
+          card: 'var(--hotel-card)',
+          'card-hover': 'var(--hotel-card-hover)',
+          border: 'var(--hotel-border)',
+          'border-strong': 'var(--hotel-border-strong)',
+          'border-gold': 'var(--hotel-border-gold)',
           gold: {
-            DEFAULT: '#D4AF37',
-            light: '#DFBE52',
-            dark: '#9A7D20',
-            subtle: 'rgba(212, 175, 55, 0.12)'
+            DEFAULT: 'var(--hotel-gold)',
+            light: 'var(--hotel-gold-light)',
+            dark: 'var(--hotel-gold-dark)',
+            subtle: 'var(--hotel-gold-subtle)'
           },
-          muted: '#A8A49B',
-          text: '#F7F4EE'
+          muted: 'var(--hotel-muted)',
+          text: 'var(--hotel-text)',
+          secondary: 'var(--hotel-text-secondary)',
+          'tag-bg': 'var(--hotel-tag-bg)',
         }
       },
       fontFamily: {

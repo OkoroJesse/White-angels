@@ -51,16 +51,16 @@ export default function BookingModal({ isOpen, onClose, preSelectedRoomId }: Boo
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           onClick={onClose}
-          className="fixed inset-0 bg-black/85 backdrop-blur-md"
+          className="fixed inset-0 bg-black/80 backdrop-blur-md"
         />
 
-        {/* Modal Container — Compact & Responsive */}
+        {/* Modal Container — High-contrast in both Dark and Light modes */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95, y: 15 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.95, y: 15 }}
           transition={{ duration: 0.2, ease: "easeOut" }}
-          className="relative w-full max-w-md bg-hotel-surface/98 border border-white/15 rounded-2xl p-4 sm:p-5 shadow-2xl z-10 my-auto max-h-[88vh] overflow-y-auto text-white"
+          className="relative w-full max-w-md bg-hotel-surface border border-hotel-border rounded-2xl p-5 sm:p-6 shadow-2xl z-10 my-auto max-h-[88vh] overflow-y-auto text-hotel-text transition-colors duration-300"
         >
           {/* Top Gold Accent Line */}
           <div className="absolute top-0 left-0 right-0 h-1 bg-gold-gradient" />
@@ -68,7 +68,7 @@ export default function BookingModal({ isOpen, onClose, preSelectedRoomId }: Boo
           {/* Close Button */}
           <button
             onClick={onClose}
-            className="absolute top-3 right-3 p-1.5 text-gray-400 hover:text-white rounded-full bg-white/5 hover:bg-white/10 transition-colors"
+            className="absolute top-3.5 right-3.5 p-1.5 text-hotel-muted hover:text-hotel-text rounded-full bg-hotel-tag-bg border border-hotel-border transition-colors"
             aria-label="Close booking modal"
           >
             <X className="w-4 h-4" />
@@ -79,41 +79,41 @@ export default function BookingModal({ isOpen, onClose, preSelectedRoomId }: Boo
             <span className="text-[10px] uppercase font-bold tracking-widest text-hotel-gold block">
               Direct Reservation Concierge
             </span>
-            <h2 className="font-serif-heading text-xl sm:text-2xl text-white font-bold mt-0.5">
+            <h2 className="font-serif-heading text-xl sm:text-2xl text-hotel-text font-bold mt-0.5">
               Check Availability & Reserve
             </h2>
-            <p className="text-xs text-gray-400 mt-0.5">
+            <p className="text-xs text-hotel-muted mt-0.5">
               {HOTEL_DATA.name} — Kubwa, Abuja
             </p>
           </div>
 
           {/* Form Fields */}
-          <div className="space-y-3">
+          <div className="space-y-3.5">
             {/* Room Category Selection */}
             <div>
-              <label className="block text-[10px] uppercase tracking-wider text-gray-400 font-semibold mb-1">
+              <label className="block text-[10px] uppercase tracking-wider text-hotel-muted font-semibold mb-1">
                 Select Suite / Room
               </label>
               <div className="relative">
                 <select
                   value={selectedRoom}
                   onChange={(e) => setSelectedRoom(e.target.value)}
-                  className="w-full bg-hotel-bg border border-white/15 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-hotel-gold text-xs appearance-none"
+                  className="w-full bg-hotel-bg border border-hotel-border rounded-lg px-3 py-2.5 text-hotel-text focus:outline-none focus:border-hotel-gold text-xs appearance-none font-medium"
                 >
                   {ROOMS_DATA.map((room) => (
-                    <option key={room.id} value={room.id} className="bg-hotel-surface text-white">
+                    <option key={room.id} value={room.id} className="bg-hotel-surface text-hotel-text">
                       {room.name} ({room.capacity.bedType})
                     </option>
                   ))}
                 </select>
-                <BedDouble className="absolute right-3 top-2.5 w-3.5 h-3.5 text-hotel-gold pointer-events-none" />
+                <BedDouble className="absolute right-3 top-3 w-4 h-4 text-hotel-gold pointer-events-none" />
               </div>
             </div>
 
             {/* Dates Grid */}
-            <div className="grid grid-cols-2 gap-2.5">
+            <div className="grid grid-cols-2 gap-3">
               <div>
-                <label className="block text-[10px] uppercase tracking-wider text-gray-400 font-semibold mb-1">
+                <label className="block text-[10px] uppercase tracking-wider text-hotel-muted font-semibold mb-1">
                   Check-in Date
                 </label>
                 <div className="relative">
@@ -121,14 +121,14 @@ export default function BookingModal({ isOpen, onClose, preSelectedRoomId }: Boo
                     type="date"
                     value={checkInDate}
                     onChange={(e) => setCheckInDate(e.target.value)}
-                    className="w-full bg-hotel-bg border border-white/15 rounded-lg px-2.5 py-2 text-white focus:outline-none focus:border-hotel-gold text-xs"
+                    className="w-full bg-hotel-bg border border-hotel-border rounded-lg px-2.5 py-2 text-hotel-text focus:outline-none focus:border-hotel-gold text-xs font-medium"
                   />
-                  <Calendar className="absolute right-2.5 top-2.5 w-3.5 h-3.5 text-gray-400 pointer-events-none" />
+                  <Calendar className="absolute right-2.5 top-2.5 w-3.5 h-3.5 text-hotel-muted pointer-events-none" />
                 </div>
               </div>
 
               <div>
-                <label className="block text-[10px] uppercase tracking-wider text-gray-400 font-semibold mb-1">
+                <label className="block text-[10px] uppercase tracking-wider text-hotel-muted font-semibold mb-1">
                   Check-out Date
                 </label>
                 <div className="relative">
@@ -136,57 +136,57 @@ export default function BookingModal({ isOpen, onClose, preSelectedRoomId }: Boo
                     type="date"
                     value={checkOutDate}
                     onChange={(e) => setCheckOutDate(e.target.value)}
-                    className="w-full bg-hotel-bg border border-white/15 rounded-lg px-2.5 py-2 text-white focus:outline-none focus:border-hotel-gold text-xs"
+                    className="w-full bg-hotel-bg border border-hotel-border rounded-lg px-2.5 py-2 text-hotel-text focus:outline-none focus:border-hotel-gold text-xs font-medium"
                   />
-                  <Calendar className="absolute right-2.5 top-2.5 w-3.5 h-3.5 text-gray-400 pointer-events-none" />
+                  <Calendar className="absolute right-2.5 top-2.5 w-3.5 h-3.5 text-hotel-muted pointer-events-none" />
                 </div>
               </div>
             </div>
 
             {/* Guests selection */}
             <div>
-              <label className="block text-[10px] uppercase tracking-wider text-gray-400 font-semibold mb-1">
+              <label className="block text-[10px] uppercase tracking-wider text-hotel-muted font-semibold mb-1">
                 Number of Guests
               </label>
               <div className="relative">
                 <select
                   value={guestsCount}
                   onChange={(e) => setGuestsCount(Number(e.target.value))}
-                  className="w-full bg-hotel-bg border border-white/15 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-hotel-gold text-xs appearance-none"
+                  className="w-full bg-hotel-bg border border-hotel-border rounded-lg px-3 py-2.5 text-hotel-text focus:outline-none focus:border-hotel-gold text-xs appearance-none font-medium"
                 >
-                  <option value={1} className="bg-hotel-surface">1 Adult</option>
-                  <option value={2} className="bg-hotel-surface">2 Adults</option>
-                  <option value={3} className="bg-hotel-surface">2 Adults + 1 Child</option>
-                  <option value={4} className="bg-hotel-surface">Executive Family Group</option>
+                  <option value={1} className="bg-hotel-surface text-hotel-text">1 Adult</option>
+                  <option value={2} className="bg-hotel-surface text-hotel-text">2 Adults</option>
+                  <option value={3} className="bg-hotel-surface text-hotel-text">2 Adults + 1 Child</option>
+                  <option value={4} className="bg-hotel-surface text-hotel-text">Executive Family Group</option>
                 </select>
-                <Users className="absolute right-3 top-2.5 w-3.5 h-3.5 text-gray-400 pointer-events-none" />
+                <Users className="absolute right-3 top-3 w-4 h-4 text-hotel-muted pointer-events-none" />
               </div>
             </div>
           </div>
 
           {/* Guarantee Banner */}
-          <div className="mt-3.5 p-2 rounded-lg bg-white/5 border border-white/10 flex items-center justify-between text-[11px] text-gray-300">
-            <div className="flex items-center gap-1.5">
-              <ShieldCheck className="w-3.5 h-3.5 text-hotel-gold flex-shrink-0" />
+          <div className="mt-3.5 p-2.5 rounded-lg bg-hotel-tag-bg border border-hotel-border flex items-center justify-between text-[11px] text-hotel-muted font-medium">
+            <div className="flex items-center gap-2">
+              <ShieldCheck className="w-4 h-4 text-hotel-gold flex-shrink-0" />
               <span>Direct Booking Guarantee & 24/7 Confirmation</span>
             </div>
           </div>
 
           {/* Action CTAs */}
-          <div className="mt-4 grid grid-cols-2 gap-2">
+          <div className="mt-4 grid grid-cols-2 gap-2.5">
             <button
               onClick={handleWhatsappBooking}
-              className="flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-xs transition-all shadow-md"
+              className="flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs transition-all shadow-md"
             >
-              <MessageSquare className="w-3.5 h-3.5" />
+              <MessageSquare className="w-4 h-4" />
               <span>WhatsApp</span>
             </button>
 
             <button
               onClick={handleExternalBooking}
-              className="flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-lg bg-gold-gradient hover:opacity-90 text-black font-bold text-xs transition-all shadow-md"
+              className="flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl bg-gold-gradient hover:opacity-90 text-black font-bold text-xs transition-all shadow-md"
             >
-              <ExternalLink className="w-3.5 h-3.5" />
+              <ExternalLink className="w-4 h-4" />
               <span>Booking.com</span>
             </button>
           </div>
@@ -195,9 +195,9 @@ export default function BookingModal({ isOpen, onClose, preSelectedRoomId }: Boo
           <div className="mt-3 text-center">
             <a
               href={`tel:${HOTEL_DATA.contact.phone}`}
-              className="inline-flex items-center gap-1.5 text-[11px] text-gray-400 hover:text-hotel-gold transition-colors"
+              className="inline-flex items-center gap-1.5 text-xs text-hotel-muted hover:text-hotel-gold transition-colors font-medium"
             >
-              <PhoneCall className="w-3 h-3 text-hotel-gold" />
+              <PhoneCall className="w-3.5 h-3.5 text-hotel-gold" />
               <span>Direct Call: {HOTEL_DATA.contact.phoneDisplay}</span>
             </a>
           </div>

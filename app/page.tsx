@@ -31,7 +31,7 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen bg-hotel-bg text-white selection:bg-hotel-gold/30">
+    <main className="min-h-screen bg-hotel-bg text-hotel-text selection:bg-hotel-gold/30">
       {/* Navigation Header */}
       <Navbar onOpenBooking={() => handleOpenBooking()} />
 

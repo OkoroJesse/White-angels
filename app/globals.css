@@ -7,54 +7,90 @@
 :root {
   --font-cormorant: 'Cormorant Garamond', Georgia, serif;
   --font-jakarta: 'Plus Jakarta Sans', system-ui, sans-serif;
+
+  /* ============================================================
+     DARK MODE (Default Luxury Hotel Palette)
+     ============================================================ */
+  --hotel-bg: #0B0B0A;
+  --hotel-surface: #141412;
+  --hotel-card: #181815;
+  --hotel-card-hover: #22221E;
+  --hotel-border: rgba(255, 255, 255, 0.09);
+  --hotel-border-strong: rgba(255, 255, 255, 0.18);
+  --hotel-border-gold: rgba(212, 175, 55, 0.28);
+  --hotel-gold: #D4AF37;
+  --hotel-gold-light: #DFBE52;
+  --hotel-gold-dark: #9A7D20;
+  --hotel-gold-subtle: rgba(212, 175, 55, 0.12);
+  --hotel-text: #F7F4EE;
+  --hotel-text-secondary: #D4D0C5;
+  --hotel-muted: #A8A49B;
+  --hotel-glass: rgba(14, 14, 12, 0.88);
+  --hotel-tag-bg: rgba(255, 255, 255, 0.06);
 }
 
-/* Scaled down root font-size for a tighter, refined, executive presentation */
+html.light {
+  /* ============================================================
+     LIGHT MODE (Alabaster & Champagne Executive Palette)
+     Guarantees High Contrast and Visual Clarity across all elements
+     ============================================================ */
+  --hotel-bg: #F7F5F0;
+  --hotel-surface: #FFFFFF;
+  --hotel-card: #FFFFFF;
+  --hotel-card-hover: #F2EFE8;
+  --hotel-border: rgba(28, 25, 20, 0.12);
+  --hotel-border-strong: rgba(28, 25, 20, 0.24);
+  --hotel-border-gold: rgba(184, 137, 20, 0.35);
+  --hotel-gold: #B88914;
+  --hotel-gold-light: #CD9C22;
+  --hotel-gold-dark: #876208;
+  --hotel-gold-subtle: rgba(184, 137, 20, 0.1);
+  --hotel-text: #161513;
+  --hotel-text-secondary: #38342C;
+  --hotel-muted: #5C5850;
+  --hotel-glass: rgba(255, 255, 255, 0.94);
+  --hotel-tag-bg: rgba(28, 25, 20, 0.06);
+}
+
+/* Base HTML & Scaling */
 html {
   scroll-behavior: smooth;
-  color-scheme: dark;
-  background-color: #0B0B0A;
-  font-size: 14px;
-}
-
-@media (min-width: 768px) {
-  html {
-    font-size: 14.5px;
-  }
-}
-
-@media (min-width: 1440px) {
-  html {
-    font-size: 15px;
-  }
+  font-size: 16px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 body {
   font-family: var(--font-jakarta);
-  background-color: #0B0B0A;
-  color: #F7F4EE;
+  background-color: var(--hotel-bg);
+  color: var(--hotel-text);
   overflow-x: hidden;
   letter-spacing: -0.01em;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 ::selection {
-  background-color: rgba(212, 175, 55, 0.25);
+  background-color: rgba(212, 175, 55, 0.3);
   color: #FFFFFF;
+}
+
+html.light ::selection {
+  background-color: rgba(184, 137, 20, 0.25);
+  color: #161513;
 }
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 7px;
 }
 ::-webkit-scrollbar-track {
-  background: #0B0B0A;
+  background: var(--hotel-bg);
 }
 ::-webkit-scrollbar-thumb {
-  background: #232320;
+  background: var(--hotel-border-strong);
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #D4AF37;
+  background: var(--hotel-gold);
 }
 
 /* Luxury Typography & Editorial Utilities */
@@ -69,17 +105,28 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
+html.light .text-gold-gradient {
+  background: linear-gradient(135deg, #A87A0B 0%, #B88914 45%, #D4AF37 80%, #946C0A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .border-gold-glow {
   box-shadow: 0 0 25px rgba(212, 175, 55, 0.12);
 }
 
 .bg-glass {
-  background: rgba(17, 17, 15, 0.82);
+  background: var(--hotel-glass);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
 }
 
 .hairline-divider {
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.3), transparent);
+  background: linear-gradient(90deg, transparent, var(--hotel-border-gold), transparent);
+}
+
+/* Light mode card shadow enhancement */
+html.light .shadow-luxury {
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.06), 0 2px 6px -1px rgba(0, 0, 0, 0.04);
 }

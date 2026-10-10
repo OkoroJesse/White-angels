@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { HOTEL_DATA } from "@/data/hotel";
+import { ThemeProvider } from "@/components/theme/ThemeProvider";
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://whiteangelshotel.com'),
@@ -16,6 +17,14 @@ export const metadata: Metadata = {
     "Champion Road Kubwa hotel"
   ],
   authors: [{ name: HOTEL_DATA.name }],
+  icons: {
+    icon: [
+      { url: '/logo.png', type: 'image/png' },
+      { url: '/icon.png', type: 'image/png' },
+    ],
+    shortcut: '/logo.png',
+    apple: '/logo.png',
+  },
   openGraph: {
     title: `${HOTEL_DATA.name} | Official Hotel in Kubwa, Abuja`,
     description: HOTEL_DATA.shortDescription,
@@ -84,15 +93,19 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <head>
+        <link rel="icon" href="/logo.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/logo.png" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(hotelSchema) }}
         />
       </head>
-      <body className="antialiased bg-hotel-bg text-white selection:bg-hotel-gold/30 selection:text-white">
-        {children}
+      <body className="antialiased bg-hotel-bg text-hotel-text transition-colors duration-300">
+        <ThemeProvider>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

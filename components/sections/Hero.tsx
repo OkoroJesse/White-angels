@@ -30,7 +30,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
       : HOTEL_DATA.assets.dayExterior;
 
   return (
-    <section id="top" className="relative w-full min-h-screen flex flex-col justify-between overflow-hidden bg-black text-white pt-24 lg:pt-28 pb-12">
+    <section id="top" className="relative w-full min-h-screen flex flex-col justify-between overflow-hidden bg-black text-white pt-24 lg:pt-32 pb-14">
       {/* Background Image Container with Cinematic Crossfade Overlay */}
       <div className="absolute inset-0 z-0">
         <AnimatePresence mode="wait">
@@ -53,39 +53,38 @@ export default function Hero({ onOpenBooking }: HeroProps) {
           </motion.div>
         </AnimatePresence>
 
-        {/* Gradient Vignette & Dark Overlays for Optimal Text Readability */}
-        <div className="absolute inset-0 bg-gradient-to-t from-hotel-bg via-black/50 to-black/70 z-10" />
-        <div className="absolute inset-0 bg-radial-vignette opacity-60 z-10" />
+        {/* Gradient Vignette & Dark Overlays for Optimal Text Readability in both themes */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-black/75 z-10" />
       </div>
 
-      {/* Hero Content Container */}
+      {/* Hero Content Container — Scaled Up & Majestic */}
       <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-auto w-full">
-        <div className="max-w-3xl space-y-5 pt-6 pb-8">
+        <div className="max-w-4xl space-y-6 pt-6 pb-10">
           {/* Subtitle Badge */}
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-black/60 border border-white/[0.12] backdrop-blur-md"
+            className="inline-flex items-center gap-2.5 px-4 sm:px-5 py-2 rounded-full bg-black/60 border border-white/20 backdrop-blur-md shadow-lg"
           >
-            <Sparkles className="w-3 h-3 text-hotel-gold" />
-            <span className="text-[11px] uppercase tracking-[0.25em] text-hotel-gold font-medium">
+            <Sparkles className="w-3.5 h-3.5 text-hotel-gold" />
+            <span className="text-xs uppercase tracking-[0.25em] text-hotel-gold font-medium">
               White Angels Hotel & Suite — Kubwa, Abuja
             </span>
           </motion.div>
 
-          {/* Main Title — Confident, Editorial Serif */}
+          {/* Main Title — Grand, Editorial Serif */}
           <motion.div
             initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="space-y-2.5"
+            className="space-y-3"
           >
-            <h1 className="font-serif-heading text-4xl sm:text-6xl lg:text-7xl font-light tracking-tight text-hotel-text leading-[1.08]">
+            <h1 className="font-serif-heading text-5xl sm:text-7xl lg:text-8xl font-light tracking-tight text-white leading-[1.05]">
               Comfort. Elegance. <br />
               <span className="font-normal italic text-gold-gradient">Your Stay in Abuja.</span>
             </h1>
-            <p className="text-sm sm:text-base text-hotel-muted font-serif italic max-w-xl">
+            <p className="text-base sm:text-lg text-gray-300 font-serif italic max-w-2xl leading-relaxed">
               {HOTEL_DATA.tagline}
             </p>
           </motion.div>
@@ -95,9 +94,9 @@ export default function Hero({ onOpenBooking }: HeroProps) {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.45 }}
-            className="flex items-center gap-2 text-xs text-hotel-muted font-light"
+            className="flex items-center gap-2.5 text-xs sm:text-sm text-gray-300 font-light"
           >
-            <MapPin className="w-3.5 h-3.5 text-hotel-gold flex-shrink-0" />
+            <MapPin className="w-4 h-4 text-hotel-gold flex-shrink-0" />
             <span>228 Champion Road, Chikakore, Kubwa, Abuja</span>
           </motion.div>
 
@@ -106,19 +105,19 @@ export default function Hero({ onOpenBooking }: HeroProps) {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.55 }}
-            className="flex flex-wrap items-center gap-3.5 pt-2"
+            className="flex flex-wrap items-center gap-4 pt-3"
           >
             <button
               onClick={() => onOpenBooking()}
-              className="px-7 py-3 rounded-xl bg-gold-gradient text-black font-semibold text-xs tracking-widest uppercase flex items-center gap-2.5 transition-all duration-300 hover:scale-[1.02] shadow-xl hover:shadow-yellow-600/15"
+              className="px-8 py-3.5 rounded-xl bg-gold-gradient text-black font-semibold text-xs sm:text-sm tracking-widest uppercase flex items-center gap-2.5 transition-all duration-300 hover:scale-[1.02] shadow-2xl hover:shadow-yellow-600/25"
             >
               <span>Check Availability</span>
-              <ArrowRight className="w-3.5 h-3.5" />
+              <ArrowRight className="w-4 h-4" />
             </button>
 
             <a
               href="#rooms"
-              className="px-7 py-3 rounded-xl bg-white/[0.06] hover:bg-white/[0.12] text-hotel-text border border-white/[0.12] font-medium text-xs tracking-widest uppercase transition-all backdrop-blur-md"
+              className="px-8 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 text-white border border-white/25 font-medium text-xs sm:text-sm tracking-widest uppercase transition-all backdrop-blur-md shadow-md"
             >
               Explore Rooms
             </a>
@@ -132,17 +131,17 @@ export default function Hero({ onOpenBooking }: HeroProps) {
           initial={{ opacity: 0, y: 35 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.7 }}
-          className="bg-hotel-surface/95 border border-white/[0.08] rounded-2xl p-5 sm:p-6 backdrop-blur-2xl shadow-2xl grid grid-cols-1 md:grid-cols-12 gap-5 items-center"
+          className="bg-hotel-surface/95 border border-hotel-border rounded-2xl p-6 sm:p-7 backdrop-blur-2xl shadow-2xl grid grid-cols-1 md:grid-cols-12 gap-5 items-center transition-colors duration-300"
         >
           {/* Room Selector */}
           <div className="md:col-span-5">
-            <label className="block text-[10px] uppercase tracking-[0.2em] text-hotel-muted font-medium mb-1.5">
+            <label className="block text-[11px] uppercase tracking-[0.2em] text-hotel-muted font-semibold mb-2">
               Select Accommodation
             </label>
             <select
               value={selectedRoom}
               onChange={(e) => setSelectedRoom(e.target.value)}
-              className="w-full bg-hotel-bg border border-white/[0.08] rounded-xl px-3.5 py-2.5 text-xs sm:text-sm text-hotel-text focus:outline-none focus:border-hotel-gold/50 transition-colors"
+              className="w-full bg-hotel-bg border border-hotel-border rounded-xl px-4 py-3 text-sm text-hotel-text focus:outline-none focus:border-hotel-gold transition-colors font-medium"
             >
               {ROOMS_DATA.map((r) => (
                 <option key={r.id} value={r.id} className="bg-hotel-surface text-hotel-text">
@@ -153,13 +152,13 @@ export default function Hero({ onOpenBooking }: HeroProps) {
           </div>
 
           {/* Feature Highlights */}
-          <div className="md:col-span-4 flex flex-wrap items-center gap-4 text-xs text-hotel-muted font-light">
-            <div className="flex items-center gap-1.5">
-              <ShieldCheck className="w-4 h-4 text-hotel-gold/90" />
+          <div className="md:col-span-4 flex flex-wrap items-center gap-5 text-xs text-hotel-muted font-medium">
+            <div className="flex items-center gap-2">
+              <ShieldCheck className="w-4 h-4 text-hotel-gold flex-shrink-0" />
               <span>24/7 Power Guarantee</span>
             </div>
-            <div className="flex items-center gap-1.5">
-              <Calendar className="w-4 h-4 text-hotel-gold/90" />
+            <div className="flex items-center gap-2">
+              <Calendar className="w-4 h-4 text-hotel-gold flex-shrink-0" />
               <span>Instant Concierge</span>
             </div>
           </div>
@@ -168,37 +167,37 @@ export default function Hero({ onOpenBooking }: HeroProps) {
           <div className="md:col-span-3">
             <button
               onClick={() => onOpenBooking(selectedRoom)}
-              className="w-full py-3 px-4 rounded-xl bg-gold-gradient text-black font-semibold text-xs uppercase tracking-widest flex items-center justify-center gap-2 hover:opacity-95 transition-all shadow-md active:scale-[0.99]"
+              className="w-full py-3.5 px-5 rounded-xl bg-gold-gradient text-black font-semibold text-xs uppercase tracking-widest flex items-center justify-center gap-2 hover:opacity-95 transition-all shadow-lg active:scale-[0.99]"
             >
               <span>Reserve Suite Direct</span>
-              <ArrowRight className="w-3.5 h-3.5" />
+              <ArrowRight className="w-4 h-4" />
             </button>
           </div>
         </motion.div>
 
         {/* View Switcher Toggle & Scroll Hint */}
-        <div className="flex items-center justify-between mt-4 text-xs text-hotel-muted">
-          <div className="flex items-center gap-2">
-            <span className="text-[11px] uppercase tracking-wider font-light text-hotel-muted flex items-center gap-1.5">
-              <RefreshCw className="w-3 h-3 text-hotel-gold/80 animate-spin" style={{ animationDuration: '6s' }} />
+        <div className="flex items-center justify-between mt-4 text-xs text-gray-300">
+          <div className="flex items-center gap-2.5">
+            <span className="text-xs uppercase tracking-wider font-medium text-gray-300 flex items-center gap-2">
+              <RefreshCw className="w-3.5 h-3.5 text-hotel-gold animate-spin" style={{ animationDuration: '6s' }} />
               Live Exterior View:
             </span>
             <button
               onClick={() => setActiveHeroBg("night")}
-              className={`px-3 py-1 rounded-md text-[11px] transition-all ${
+              className={`px-3.5 py-1.5 rounded-lg text-xs transition-all ${
                 activeHeroBg === "night"
-                  ? "bg-hotel-gold text-black font-medium"
-                  : "bg-white/[0.05] hover:bg-white/[0.1] text-hotel-muted"
+                  ? "bg-hotel-gold text-black font-semibold shadow"
+                  : "bg-white/10 hover:bg-white/20 text-gray-200 border border-white/10"
               }`}
             >
               Evening Facade
             </button>
             <button
               onClick={() => setActiveHeroBg("day")}
-              className={`px-3 py-1 rounded-md text-[11px] transition-all ${
+              className={`px-3.5 py-1.5 rounded-lg text-xs transition-all ${
                 activeHeroBg === "day"
-                  ? "bg-hotel-gold text-black font-medium"
-                  : "bg-white/[0.05] hover:bg-white/[0.1] text-hotel-muted"
+                  ? "bg-hotel-gold text-black font-semibold shadow"
+                  : "bg-white/10 hover:bg-white/20 text-gray-200 border border-white/10"
               }`}
             >
               Daytime View
@@ -207,10 +206,10 @@ export default function Hero({ onOpenBooking }: HeroProps) {
 
           <a
             href="#welcome"
-            className="hidden sm:inline-flex items-center gap-1.5 text-xs text-hotel-muted hover:text-hotel-gold transition-colors"
+            className="hidden sm:inline-flex items-center gap-2 text-xs text-gray-300 hover:text-hotel-gold transition-colors font-medium"
           >
             <span>Explore Hotel</span>
-            <ChevronDown className="w-3.5 h-3.5 animate-bounce" />
+            <ChevronDown className="w-4 h-4 animate-bounce text-hotel-gold" />
           </a>
         </div>
       </div>

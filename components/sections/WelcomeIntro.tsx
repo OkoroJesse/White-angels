@@ -7,7 +7,7 @@ import { ShieldCheck, Zap, Wifi, MapPin } from "lucide-react";
 
 export default function WelcomeIntro() {
   return (
-    <section id="welcome" className="py-20 lg:py-28 bg-hotel-bg text-hotel-text relative overflow-hidden">
+    <section id="welcome" className="py-24 lg:py-32 bg-hotel-bg text-hotel-text relative overflow-hidden transition-colors duration-300">
       {/* Subtle Warm Atmospheric Glow */}
       <div className="absolute top-1/4 -left-32 w-96 h-96 bg-hotel-gold/5 rounded-full blur-[120px] pointer-events-none" />
 
@@ -20,9 +20,9 @@ export default function WelcomeIntro() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-              className="relative z-10 rounded-2xl overflow-hidden border border-white/[0.08] shadow-2xl bg-hotel-surface"
+              className="relative z-10 rounded-2xl overflow-hidden border border-hotel-border shadow-2xl bg-hotel-surface"
             >
-              <div className="relative h-[300px] sm:h-[380px] w-full">
+              <div className="relative h-[360px] sm:h-[460px] w-full">
                 <Image
                   src={HOTEL_DATA.assets.reception}
                   alt="White Angels Hotel Reception Foyer"
@@ -39,9 +39,9 @@ export default function WelcomeIntro() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.9, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
-              className="hidden sm:block absolute -bottom-10 -right-6 z-20 w-3/5 rounded-2xl overflow-hidden border border-hotel-gold/30 shadow-2xl bg-hotel-surface"
+              className="hidden sm:block absolute -bottom-10 -right-6 z-20 w-3/5 rounded-2xl overflow-hidden border-2 border-hotel-gold/40 shadow-2xl bg-hotel-surface"
             >
-              <div className="relative h-44 w-full">
+              <div className="relative h-48 sm:h-56 w-full">
                 <Image
                   src={HOTEL_DATA.assets.dayExterior}
                   alt="White Angels Hotel Building Facade"
@@ -51,8 +51,8 @@ export default function WelcomeIntro() {
               </div>
             </motion.div>
 
-            {/* Subtle Editorial Caption Overlay */}
-            <div className="absolute top-6 left-6 z-30 bg-black/75 backdrop-blur-md border border-white/10 px-4 py-1.5 rounded-full text-[11px] text-hotel-gold tracking-widest uppercase font-medium">
+            {/* Editorial Caption Overlay */}
+            <div className="absolute top-6 left-6 z-30 bg-black/80 backdrop-blur-md border border-hotel-gold/30 px-4 py-1.5 rounded-full text-xs text-hotel-gold tracking-widest uppercase font-semibold">
               Chikakore, Kubwa • Abuja
             </div>
           </div>
@@ -69,7 +69,7 @@ export default function WelcomeIntro() {
               <span className="text-xs uppercase font-medium tracking-[0.25em] text-hotel-gold block">
                 Refined Hospitality in Abuja
               </span>
-              <h2 className="font-serif-heading text-3xl sm:text-5xl font-normal text-hotel-text tracking-tight leading-[1.15]">
+              <h2 className="font-serif-heading text-4xl sm:text-5xl lg:text-6xl font-normal text-hotel-text tracking-tight leading-[1.12]">
                 Welcome to White Angels <br className="hidden sm:inline" />
                 <span className="italic font-light text-hotel-gold">Hotel & Suite</span>
               </h2>
@@ -81,9 +81,9 @@ export default function WelcomeIntro() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: 0.15 }}
-              className="space-y-4 text-hotel-muted text-sm sm:text-base leading-relaxed"
+              className="space-y-4 text-hotel-muted text-base leading-relaxed"
             >
-              <p className="text-hotel-text/90 font-serif text-lg sm:text-xl italic font-light leading-snug text-gray-200">
+              <p className="text-hotel-text font-serif text-xl sm:text-2xl italic font-light leading-snug">
                 “A serene sanctuary in Kubwa — where contemporary architectural poise meets genuine hospitality.”
               </p>
               <p>
@@ -94,25 +94,25 @@ export default function WelcomeIntro() {
               </p>
             </motion.div>
 
-            {/* Editorial Feature Highlights — Minimal, Luxurious, Non-SaaS */}
+            {/* Editorial Feature Highlights */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: 0.3 }}
-              className="pt-6 border-t border-white/[0.08]"
+              className="pt-6 border-t border-hotel-border"
             >
               <div className="grid grid-cols-2 gap-x-6 gap-y-6">
                 {/* 24/7 Power */}
                 <div className="flex items-start gap-3.5 group">
                   <div className="mt-0.5 text-hotel-gold">
-                    <Zap className="w-4 h-4 stroke-[1.5]" />
+                    <Zap className="w-5 h-5 stroke-[1.75]" />
                   </div>
                   <div>
                     <h4 className="text-xs font-semibold uppercase tracking-wider text-hotel-text group-hover:text-hotel-gold transition-colors">
                       24/7 Power
                     </h4>
-                    <p className="text-[12px] text-hotel-muted mt-0.5 font-light">
+                    <p className="text-xs text-hotel-muted mt-0.5 font-light">
                       Guaranteed Electricity
                     </p>
                   </div>
@@ -121,13 +121,13 @@ export default function WelcomeIntro() {
                 {/* High-Speed Wi-Fi */}
                 <div className="flex items-start gap-3.5 group">
                   <div className="mt-0.5 text-hotel-gold">
-                    <Wifi className="w-4 h-4 stroke-[1.5]" />
+                    <Wifi className="w-5 h-5 stroke-[1.75]" />
                   </div>
                   <div>
                     <h4 className="text-xs font-semibold uppercase tracking-wider text-hotel-text group-hover:text-hotel-gold transition-colors">
                       High-Speed Wi-Fi
                     </h4>
-                    <p className="text-[12px] text-hotel-muted mt-0.5 font-light">
+                    <p className="text-xs text-hotel-muted mt-0.5 font-light">
                       Starlink Connectivity
                     </p>
                   </div>
@@ -136,13 +136,13 @@ export default function WelcomeIntro() {
                 {/* Gated Security */}
                 <div className="flex items-start gap-3.5 group">
                   <div className="mt-0.5 text-hotel-gold">
-                    <ShieldCheck className="w-4 h-4 stroke-[1.5]" />
+                    <ShieldCheck className="w-5 h-5 stroke-[1.75]" />
                   </div>
                   <div>
                     <h4 className="text-xs font-semibold uppercase tracking-wider text-hotel-text group-hover:text-hotel-gold transition-colors">
                       Gated Security
                     </h4>
-                    <p className="text-[12px] text-hotel-muted mt-0.5 font-light">
+                    <p className="text-xs text-hotel-muted mt-0.5 font-light">
                       24-Hour Surveillance
                     </p>
                   </div>
@@ -151,13 +151,13 @@ export default function WelcomeIntro() {
                 {/* Prime Location */}
                 <div className="flex items-start gap-3.5 group">
                   <div className="mt-0.5 text-hotel-gold">
-                    <MapPin className="w-4 h-4 stroke-[1.5]" />
+                    <MapPin className="w-5 h-5 stroke-[1.75]" />
                   </div>
                   <div>
                     <h4 className="text-xs font-semibold uppercase tracking-wider text-hotel-text group-hover:text-hotel-gold transition-colors">
                       Prime Location
                     </h4>
-                    <p className="text-[12px] text-hotel-muted mt-0.5 font-light">
+                    <p className="text-xs text-hotel-muted mt-0.5 font-light">
                       Champion Rd, Kubwa
                     </p>
                   </div>
