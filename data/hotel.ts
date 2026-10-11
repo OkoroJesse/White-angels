@@ -79,9 +79,9 @@ export const HOTEL_DATA: HotelConfig = {
   assets: {
     logo: "/logo.png",
     logoOfficial: "/images/hotel/logo-official.png",
-    heroBg: "/images/hotel/exterior-night.png",
+    heroBg: "/images/hotel/exterior-night.jpg",
     dayExterior: "/images/hotel/exterior-day.jpg",
-    nightExterior: "/images/hotel/exterior-night.png",
+    nightExterior: "/images/hotel/exterior-night.jpg",
     reception: "/images/hotel/reception-entrance.jpg"
   }
 };

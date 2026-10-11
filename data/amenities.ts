@@ -18,7 +18,7 @@ export const AMENITIES_DATA: Amenity[] = [
     fullDesc: "We understand the importance of seamless power. White Angels Hotel & Suite is equipped with robust heavy-duty backup generators and dual power routing to guarantee 24-hour electricity for your AC, lighting, and electronics.",
     iconName: "Zap",
     category: "essential",
-    image: "/images/hotel/exterior-night.png"
+    image: "/images/hotel/exterior-night.jpg"
   },
   {
     id: "high-speed-wifi",
@@ -68,6 +68,6 @@ export const AMENITIES_DATA: Amenity[] = [
     fullDesc: "Experience daily pristine room cleaning, fresh linens, prompt towel replacement, and responsive in-room dining services directly to your room door.",
     iconName: "Sparkles",
     category: "comfort",
-    image: "/images/hotel/exterior-night.png"
+    image: "/images/hotel/exterior-night.jpg"
   }
 ];

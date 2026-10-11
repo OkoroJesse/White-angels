@@ -48,7 +48,7 @@ export const ROOMS_DATA: RoomCategory[] = [
       "/images/rooms/suite-penthouse-kitchenette.jpg",
       "/images/rooms/suite-soaking-tub.jpg",
       "/images/rooms/suite-royal-window.jpg",
-      "/images/hotel/exterior-night.png"
+      "/images/hotel/exterior-night.jpg"
     ],
     priceNotice: "Book Directly on Booking.com for Instant Rates",
     bookingUrl: BOOKING_CONFIG.externalBookingUrl
@@ -111,7 +111,7 @@ export const ROOMS_DATA: RoomCategory[] = [
       "/images/rooms/suite-soaking-tub.jpg",
       "/images/rooms/suite-tub-view2.jpg",
       "/images/rooms/suite-spacious-lounge.jpg",
-      "/images/hotel/exterior-night.png"
+      "/images/hotel/exterior-night.jpg"
     ],
     priceNotice: "Book Directly on Booking.com for Instant Rates",
     bookingUrl: BOOKING_CONFIG.externalBookingUrl

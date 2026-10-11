@@ -139,7 +139,7 @@ export const GALLERY_DATA: GalleryItem[] = [
     id: "night-facade",
     title: "Illuminated Evening Facade",
     category: "Night View",
-    src: "/images/hotel/exterior-night.png",
+    src: "/images/hotel/exterior-night.jpg",
     alt: "White Angels Hotel & Suite exterior illuminated with architectural night lighting",
     caption: "The elegant night view of White Angels Hotel & Suite showing architectural LED strip lights and secure paved courtyard in Chikakore, Kubwa.",
     featured: true
